@@ -1,0 +1,61 @@
+/*
+!.gitignore
+!lab1/
+!lab2/
+!lab3/
+!lab4/
+
+lab1/*
+!lab1/rozwiazania.js
+
+lab2/*
+!lab2/project/
+!lab2/zadanie1/
+!lab2/zadanie2/
+lab2/project/*
+!lab2/project/App.tsx
+!lab2/project/components/
+!lab2/project/screens/
+lab2/project/components/*
+lab2/project/screens/*
+!lab2/project/components/EventCard.tsx
+!lab2/project/components/SettingsRow.tsx
+!lab2/project/screens/EventScreen.tsx
+!lab2/project/screens/UserScreen.tsx
+!lab2/zadanie1/App.tsx
+!lab2/zadanie1/components/
+!lab2/zadanie1/components/EventCard.tsx
+!lab2/zadanie2/App.tsx
+!lab2/zadanie2/components/
+!lab2/zadanie2/components/SettingsRow.tsx
+
+lab3/*
+!lab3/project/
+lab3/project/*
+!lab3/project/App.tsx
+!lab3/project/components/
+lab3/project/components/*
+!lab3/project/components/PostCard.tsx
+
+lab4/*
+!lab4/project/
+lab4/project/*
+!lab4/project/App.tsx
+
+**/.expo/
+**/node_modules/
+**/dist/
+**/build/
+
+# Explicitly ignore specific documentation files requested by the user
+/lab1/\#1PodstawyJavaScript.md
+/lab1/KonstrukcjeJavaScript.md
+/lab1/KonstrukcjewTypeScript.md
+
+/lab3/JSON w React Native.md
+/lab3/Połączenia sieciowe w React Native z Expo.md
+/lab3/Połączenie do serwera, pobranie i zapis danych z aplikacji mobilnej na serwer.md
+/lab3/Wyświetlanie kolekcji obiektów w React Native (Expo).md
+ 
+**/.DS_Store
+**/*.log
