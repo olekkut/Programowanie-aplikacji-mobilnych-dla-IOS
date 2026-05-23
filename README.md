@@ -1,1 +1,0 @@
-# Programowanie-aplikacji-mobilnych-dla-IOS
