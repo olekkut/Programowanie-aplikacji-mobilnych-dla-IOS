@@ -219,11 +219,13 @@ export default function App() {
             title="Powiadomienia"
             description="Dostajesz krótkie alerty o ważnych zmianach."
             value="Włączone"
+            theme={theme}
           />
           <SettingsRow
             title="Prywatność"
             description="Widoczność profilu ustawiona na poziom podstawowy."
             value="Podstawowa"
+            theme={theme}
           />
           <SettingsRow
             title="Ciemny motyw"
@@ -231,11 +233,13 @@ export default function App() {
             value={isDarkMode ? 'Włączony' : 'Wyłączony'}
             onPress={() => setIsDarkMode(previous => !previous)}
             highlight
+            theme={theme}
           />
           <SettingsRow
             title="O aplikacji"
             description="Wersja demonstracyjna przygotowana na potrzeby laboratorium."
             value="Info"
+            theme={theme}
           />
         </View>
       </ScrollView>
