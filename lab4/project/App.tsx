@@ -9,7 +9,8 @@ import {
   Pressable,
   Platform,
   RefreshControl,
-  Alert
+  Alert,
+  FlatList
 } from 'react-native';
 import * as Location from 'expo-location';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -37,6 +38,21 @@ type HourlyItem = {
   temp: number;
   prob: number;
 };
+
+type StatCardProps = {
+  label: string;
+  value: string | number;
+  emoji: string;
+};
+
+function StatCard({ label, value, emoji }: StatCardProps) {
+  return (
+    <View style={styles.statCard}>
+      <Text style={styles.statLabel}>{label} {emoji}</Text>
+      <Text style={styles.statValue}>{value}</Text>
+    </View>
+  );
+}
 
 function getWeatherDescription(code: number): { text: string; emoji: string } {
   if (code === 0) return { text: 'Czyste niebo', emoji: '☀️' };
@@ -244,34 +260,28 @@ export default function App() {
 
                 {/* Statystyki Szczegółowe */}
                 <View style={styles.statsGrid}>
-                  <View style={styles.statCard}>
-                    <Text style={styles.statLabel}>Wiatr 💨</Text>
-                    <Text style={styles.statValue}>{weather.current.wind_speed_10m} km/h</Text>
-                  </View>
-                  <View style={styles.statCard}>
-                    <Text style={styles.statLabel}>Wilgotność 💧</Text>
-                    <Text style={styles.statValue}>{weather.current.relative_humidity_2m}%</Text>
-                  </View>
-                  <View style={styles.statCard}>
-                    <Text style={styles.statLabel}>Opad 🌧️</Text>
-                    <Text style={styles.statValue}>{weather.current.precipitation} mm</Text>
-                  </View>
+                  <StatCard label="Wiatr" value={`${weather.current.wind_speed_10m} km/h`} emoji="💨" />
+                  <StatCard label="Wilgotność" value={`${weather.current.relative_humidity_2m}%`} emoji="💧" />
+                  <StatCard label="Opad" value={`${weather.current.precipitation} mm`} emoji="🌧️" />
                 </View>
 
                 {/* Prognoza Godzinowa */}
                 <Text style={styles.sectionTitle}>Prognoza na najbliższe 24h</Text>
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.hourlyScroll}>
-                  {getNext24h(weather).map((item, index) => {
-                    return (
-                      <View key={index} style={styles.hourlyItem}>
-                        <Text style={styles.hourlyTime}>{formatHour(item.time)}</Text>
-                        <Text style={styles.hourlyEmoji}>{item.prob > 30 ? '🌧️' : '🌤️'}</Text>
-                        <Text style={styles.hourlyTemp}>{Math.round(item.temp)}°C</Text>
-                        <Text style={styles.hourlyProb}>{item.prob}% opad</Text>
-                      </View>
-                    );
-                  })}
-                </ScrollView>
+                <FlatList
+                  horizontal
+                  data={getNext24h(weather)}
+                  keyExtractor={(_, index) => index.toString()}
+                  showsHorizontalScrollIndicator={false}
+                  style={styles.hourlyScroll}
+                  renderItem={({ item }) => (
+                    <View style={styles.hourlyItem}>
+                      <Text style={styles.hourlyTime}>{formatHour(item.time)}</Text>
+                      <Text style={styles.hourlyEmoji}>{item.prob > 30 ? '🌧️' : '🌤️'}</Text>
+                      <Text style={styles.hourlyTemp}>{Math.round(item.temp)}°C</Text>
+                      <Text style={styles.hourlyProb}>{item.prob}% opad</Text>
+                    </View>
+                  )}
+                />
               </>
             ) : (
               <View style={styles.noPermissionCard}>

@@ -48,10 +48,22 @@ lab4/project/*
 **/dist/
 **/build/
 
+# Allow DOKUMENTACJA.md and config files in unignored directories
+!lab4/DOKUMENTACJA.md
+!**/package.json
+!**/package-lock.json
+!**/tsconfig.json
+!**/app.json
+!**/app.config.js
+!**/metro.config.js
+!**/index.js
+!/README.md
+
 # Explicitly ignore specific documentation files requested by the user
 /lab1/\#1PodstawyJavaScript.md
 /lab1/KonstrukcjeJavaScript.md
 /lab1/KonstrukcjewTypeScript.md
+/lab2/README.md
 
 /lab3/JSON w React Native.md
 /lab3/Połączenia sieciowe w React Native z Expo.md

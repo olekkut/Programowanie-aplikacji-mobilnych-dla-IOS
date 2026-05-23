@@ -1,0 +1,26 @@
+{
+  "name": "lab2-project",
+  "version": "1.0.0",
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo/ngrok": "^4.1.3",
+    "@types/react": "~18.0.27",
+    "expo": "~48.0.0",
+    "react": "18.2.0",
+    "react-native": "0.71.14",
+    "typescript": "^4.9.4",
+    "react-native-web": "~0.18.10",
+    "react-dom": "18.2.0",
+    "@expo/webpack-config": "^18.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
