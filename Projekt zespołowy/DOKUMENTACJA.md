@@ -15,7 +15,7 @@ Współczesne referenda lokalne w Polsce (np. w sprawach odwołania wójta/rady,
 * **Odporność na cenzurę:** Zdecentralizowana architektura platformy uniemożliwia przejęcie kontroli nad systemem lub jego wyłączenie przez jakikolwiek pojedynczy organ władzy. Dzięki rozproszeniu węzłów walidujących sieci Proof of Authority (PKW, Ministerstwo Cyfryzacji, NGO) oraz bezpośredniej integracji z rozproszonym ledgerem, referenda i ich wyniki są całkowicie odporne na zewnętrzne manipulacje i blokady.
 * **Anonimowe głosowanie:** Głosy są w pełni prywatne i nie mogą zostać w żaden sposób powiązane z tożsamością obywatela. Wykorzystanie ślepych podpisów kryptograficznych (Blind Signatures) oraz dowodów z wiedzą zerową (ZKP) gwarantuje, że rejestracja obecności głosującego i samo wrzucenie głosu do urny blockchainowej to dwa zupełnie niezależne, niepowiązalne ze sobą procesy.
 * **Promowanie petycji:** Narzędzie do oddolnego inicjowania spraw społecznych i lokalnych. Obywatele mogą tworzyć własne petycje, opisywać postulaty i zbierać cyfrowe, kryptograficznie zweryfikowane podpisy poparcia od innych mieszkańców tej samej jednostki terytorialnej (gminy/powiatu).
-* **Kolektywne podejmowanie decyzji:** Budowanie przestrzeni do deliberacji publicznej. Platforma umożliwia obywatelom udział w bezpiecznych dyskusjach nad projektami uchraw, zgłaszanie opinii i wspólne dochodzenie do konsensusu w sprawach referendalnych i konsultacyjnych.
+* **Kolektywne podejmowanie decyzji:** Budowanie przestrzeni do deliberacji publicznej. Platforma umożliwia obywatelom udział w bezpiecznych dyskusjach nad projektami uchwał, zgłaszanie opinii i wspólne dochodzenie do konsensusu w sprawach referendalnych i konsultacyjnych.
 * **Konstytucyjna tajność i niezmienność:** Zapewnienie, że nikt (w tym administrator systemu) nie powiąże tożsamości obywatela z jego głosem, przy jednoczesnym kryptograficznym zagwarantowaniu, że oddany głos nie zostanie zmodyfikowany ani usunięty.
 * **Obniżenie kosztów i powszechność:** Zredukowanie kosztu przeprowadzenia referendum o ponad 95% i umożliwienie oddania głosu w kilka sekund z poziomu smartfona.
 * **Geofencing prawno-administracyjny:** Automatyczne filtrowanie referendów na podstawie kodu terytorialnego TERYT przypisanego do PESEL-u obywatela.
@@ -49,7 +49,7 @@ Projekt mGłosObywatela projektowany jest z myślą o pełnej zgodności z:
 3. **Ustawą o informatyzacji działalności podmiotów realizujących zadania publiczne:** Umożliwia wykorzystanie Węzła Krajowego (WK) jako oficjalnego środka identyfikacji elektronicznej.
 
 ### 2.2. Mechanizm weryfikacji uprawnień
-Aby uniemożliwić głosowanie osobom nieuprawnionym oraz zapobiec atakiem Sybil (tworzenie fałszywych kont), system integruje się z **Węzłem Krajowym (eIDAS / Profil Zaufany / mObywatel API)**:
+Aby uniemożliwić głosowanie osobom nieuprawnionym oraz zapobiec atakom Sybil (tworzenie fałszywych kont), system integruje się z **Węzłem Krajowym (eIDAS / Profil Zaufany / mObywatel API)**:
 
 ```mermaid
 flowchart TD
@@ -273,6 +273,7 @@ Zgodnie z wytycznymi `zad3.md`, aby przetestować hipotezę i poprawność krypt
 * Geofencing na bazie lokalizacji GPS telefonu (weryfikacja wyłącznie po zameldowaniu PESEL/TERYT).
 * Zaawansowane wykresy statystyczne i powiadomienia push o trwających głosowaniach.
 * Wersja Web aplikacji dla Obywatela (tylko aplikacja mobilna zapewnia kontrolowane środowisko kryptograficzne).
+* Moduły oddolnego zgłaszania petycji oraz forów dyskusyjnych (kolektywne podejmowanie decyzji) – w MVP dostępne jest wyłącznie głosowanie w referendach zarządzanych przez urząd.
 
 ---
 
