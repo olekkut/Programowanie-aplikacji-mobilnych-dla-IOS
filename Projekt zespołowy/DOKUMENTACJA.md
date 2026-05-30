@@ -47,22 +47,19 @@ Projekt mGłosObywatela projektowany jest z myślą o pełnej zgodności z:
 ### 2.2. Mechanizm weryfikacji uprawnień
 Aby uniemożliwić głosowanie osobom nieuprawnionym oraz zapobiec atakiem Sybil (tworzenie fałszywych kont), system integruje się z **Węzłem Krajowym (eIDAS / Profil Zaufany / mObywatel API)**:
 
-```
-[Obywatel (App React Native)] 
-      │ 
-      ▼ (1. Żądanie uwierzytelnienia OIDC OAuth2)
-[Węzeł Krajowy (mObywatel / Profil Zaufany)]
-      │
-      ├─► Sprawdzenie tożsamości (Logowanie bankowością/aplikacją)
-      │
-      ▼ (2. Zwrócenie zweryfikowanych danych osobowych)
-[Serwer Uwierzytelniania Urzędu (Identity Provider - IdP)]
-      │
-      ├─► Pobranie rejestru PESEL (Weryfikacja wieku 18+)
-      ├─► Pobranie kodu TERYT (Weryfikacja przynależności terytorialnej)
-      │
-      ▼ (3. Wygenerowanie jednorazowego tokenu uprawniającego)
-[Kryptograficzny token uprawniający (Ślepy Podpis)]
+```mermaid
+flowchart TD
+    Obywatel["Obywatel (App React Native)"]
+    WK["Węzeł Krajowy (mObywatel / Profil Zaufany)"]
+    IdP["Serwer Uwierzytelniania Urzędu (Identity Provider - IdP)"]
+    Token["Kryptograficzny token uprawniający (Ślepy Podpis)"]
+
+    Obywatel -->|1. Żądanie uwierzytelnienia OIDC OAuth2| WK
+    WK -->|Sprawdzenie tożsamości:<br/>Logowanie bankowością / aplikacją| WK
+    WK -->|2. Zwrócenie zweryfikowanych danych osobowych| IdP
+    IdP -->|Pobranie rejestru PESEL:<br/>Weryfikacja wieku 18+| IdP
+    IdP -->|Pobranie kodu TERYT:<br/>Weryfikacja przynależności terytorialnej| IdP
+    IdP -->|3. Wygenerowanie jednorazowego tokenu| Token
 ```
 
 * **PESEL:** Służy do potwierdzenia tożsamości oraz sprawdzenia, czy obywatel ukończył 18 rok życia w dniu głosowania.
