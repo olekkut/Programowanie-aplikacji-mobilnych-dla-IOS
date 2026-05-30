@@ -1,7 +1,6 @@
 # Dokumentacja projektowa: mGłosObywatela (Dokumentacja MVP)
-**Zdecentralizowana platforma mikro-referendów lokalnych i ogólnokrajowych w Polsce**
-
 <p align="center">
+<b>Zdecentralizowana platforma mikro-referendów lokalnych i ogólnokrajowych w Polsce</b><br><br>
   <img src="assets/mGłos-logo-trans.png" alt="mGłosObywatela Logo" width="250"/>
 </p>
 
@@ -14,7 +13,7 @@
 </p>
 
 * **Przedmiot:** Projekt zespołowy - Aplikacja mobilna
-* **Autor:** Student (Realizacja Solo)
+* **Autor:** Aleksander Kutycki
 * **Status projektu:** Analiza i Projekt Architektury (Dokumentacja MVP)
 * **Data:** Maj 2026
 
