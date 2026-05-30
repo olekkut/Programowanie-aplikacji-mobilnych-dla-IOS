@@ -1,6 +1,10 @@
 # Dokumentacja projektowa: mGłosObywatela (Dokumentacja MVP)
 **Zdecentralizowana platforma mikro-referendów lokalnych i ogólnokrajowych w Polsce**
 
+<p align="center">
+  <img src="assets/mGłos-logo-trans.png" alt="mGłosObywatela Logo" width="250"/>
+</p>
+
 ## 1. Opis pomysłu i cel aplikacji
 
 ### 1.1. Intro
