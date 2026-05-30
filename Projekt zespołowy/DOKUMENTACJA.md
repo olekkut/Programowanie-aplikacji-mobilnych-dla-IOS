@@ -403,7 +403,7 @@ Aplikacja **mGłosObywatela** stanowi unikalne połączenie polskiego porządku 
 
 ## 9. Źródła
 1. **Chaum, D. (1983).** *Blind signatures for untraceable payments.* Advances in Cryptology.
-2. **Semaphore Protocol Documentation.** *Zero-Knowledge group membership and signaling.* [https://semaphore.semaphore.foundation/](https://semaphore.semaphore.foundation/)
+2. **Semaphore Protocol Documentation.** *Zero-Knowledge group membership and signaling.* [https://semaphore.pse.dev/](https://semaphore.pse.dev/) (Dokumentacja: [https://docs.semaphore.pse.dev/](https://docs.semaphore.pse.dev/))
 3. **Hyperledger Besu Enterprise Ethereum client.** [https://besu.hyperledger.org/](https://besu.hyperledger.org/)
 4. **Ustawa o referendum lokalnym** (Dz. U. z 2024 r. poz. 62).
 5. **OWASP Mobile Application Security Verification Standard (MASVS).** [https://mas.owasp.org/](https://mas.owasp.org/)
