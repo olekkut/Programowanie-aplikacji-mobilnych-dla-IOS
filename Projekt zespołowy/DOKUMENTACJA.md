@@ -88,15 +88,15 @@ flowchart TD
     IdP["Serwer Uwierzytelniania Urzędu (IdP)"]
     Token["Kryptograficzny token (Ślepy Podpis)"]
 
-    Obywatel -->|1. Zbliżenie dokumentu do telefonu| eDowod
-    Obywatel -->|2. Odczyt danych NFC (ICAO 9303)| eDowod
-    eDowod -->|3. Przekazanie danych do enklawy| Enclave
-    Enclave -->|4. Weryfikacja certyfikatów i podpisu SOD| Enclave
-    Enclave -->|5. Wygenerowanie atestacji uprawnień| ZKP
-    ZKP -->|6. Wygenerowanie dowodu ZKP (wiek>=18, kod TERYT)| ZKP
-    ZKP -->|7. Przesłanie dowodu ZKP i ślepego haszu| IdP
-    IdP -->|8. Weryfikacja ZKP (brak znajomości PESEL)| IdP
-    IdP -->|9. Odesłanie ślepego podpisu| Token
+    Obywatel -->|"1. Zbliżenie dokumentu do telefonu"| eDowod
+    Obywatel -->|"2. Odczyt danych NFC (ICAO 9303)"| eDowod
+    eDowod -->|"3. Przekazanie danych do enklawy"| Enclave
+    Enclave -->|"4. Weryfikacja certyfikatów i podpisu SOD"| Enclave
+    Enclave -->|"5. Wygenerowanie atestacji uprawnień"| ZKP
+    ZKP -->|"6. Wygenerowanie dowodu ZKP (wiek >= 18, kod TERYT)"| ZKP
+    ZKP -->|"7. Przesłanie dowodu ZKP i ślepego haszu"| IdP
+    IdP -->|"8. Weryfikacja ZKP (brak znajomości PESEL)"| IdP
+    IdP -->|"9. Odesłanie ślepego podpisu"| Token
 ```
 
 ---
