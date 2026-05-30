@@ -14,6 +14,8 @@ Współczesne referenda lokalne w Polsce (np. w sprawach odwołania wójta/rady,
 **Główne cele użytkowe:**
 * **Odporność na cenzurę (Censorship Resistant):** Zdecentralizowana architektura platformy uniemożliwia przejęcie kontroli nad systemem lub jego wyłączenie przez jakikolwiek pojedynczy organ władzy. Dzięki rozproszeniu węzłów walidujących sieci Proof of Authority (PKW, Ministerstwo Cyfryzacji, NGO) oraz bezpośredniej integracji z rozproszonym ledgerem, referenda i ich wyniki są całkowicie odporne na zewnętrzne manipulacje i blokady.
 * **Anonimowe głosowanie (Anonymous Voting):** Głosy są w pełni prywatne i nie mogą zostać w żaden sposób powiązane z tożsamością obywatela. Wykorzystanie ślepych podpisów kryptograficznych (Blind Signatures) oraz dowodów z wiedzą zerową (ZKP) gwarantuje, że rejestracja obecności głosującego i samo wrzucenie głosu do urny blockchainowej to dwa zupełnie niezależne, niepowiązalne ze sobą procesy.
+* **Promowanie petycji (Promote Petitions):** Narzędzie do oddolnego inicjowania spraw społecznych i lokalnych. Obywatele mogą tworzyć własne petycje, opisywać postulaty i zbierać cyfrowe, kryptograficznie zweryfikowane podpisy poparcia od innych mieszkańców tej samej jednostki terytorialnej (gminy/powiatu).
+* **Kolektywne podejmowanie decyzji (Collective Decision Making):** Budowanie przestrzeni do deliberacji publicznej. Platforma umożliwia obywatelom udział w bezpiecznych dyskusjach nad projektami uchraw, zgłaszanie opinii i wspólne dochodzenie do konsensusu w sprawach referendalnych i konsultacyjnych.
 * **Konstytucyjna tajność i niezmienność:** Zapewnienie, że nikt (w tym administrator systemu) nie powiąże tożsamości obywatela z jego głosem, przy jednoczesnym kryptograficznym zagwarantowaniu, że oddany głos nie zostanie zmodyfikowany ani usunięty.
 * **Obniżenie kosztów i powszechność:** Zredukowanie kosztu przeprowadzenia referendum o ponad 95% i umożliwienie oddania głosu w kilka sekund z poziomu smartfona.
 * **Geofencing prawno-administracyjny:** Automatyczne filtrowanie referendów na podstawie kodu terytorialnego TERYT przypisanego do PESEL-u obywatela.
@@ -162,6 +164,8 @@ Zamiast publicznego blockchaina (np. Ethereum, gdzie opłaty za transakcje gas-f
    * Wyrażenie głosu, wygenerowanie ślepego podpisu i przesłanie transakcji na blockchain.
    * Pobranie i zachowanie lokalnie numeru seryjnego $S$ oraz hasha transakcji blockchain w celach audytowych.
    * Weryfikacja (po zakończeniu głosowania), czy głos o numerze seryjnym $S$ znajduje się w ledgerze blockchain i czy ma przypisaną prawidłową wartość.
+   * Tworzenie i promowanie petycji obywatelskich (Promote Petitions) oraz zbieranie cyfrowego poparcia od innych zweryfikowanych mieszkańców.
+   * Udział w publicznych dyskusjach i kolektywnym podejmowaniu decyzji (Collective Decision Making) na dedykowanych forach konsultacyjnych powiązanych z referendami.
 2. **Administrator (Panel Web urzędów):**
    * Tworzenie referendów (pytanie, opcje, czas startu/końca, wymagany geofencing TERYT).
    * Generowanie pary kluczy kryptograficznych referendum ($e$, $d$, $N$).
