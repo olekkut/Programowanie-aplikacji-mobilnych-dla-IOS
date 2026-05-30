@@ -1,7 +1,7 @@
 # Dokumentacja projektowa: mGłosObywatela (Dokumentacja MVP)
 **Zdecentralizowana platforma mikro-referendów lokalnych i ogólnokrajowych w Polsce**
 
-## 1. Opis pomysłu i cel aplikacji (Zgodnie z zad1.md)
+## 1. Opis pomysłu i cel aplikacji
 
 ### 1.1. Intro
 * **Nazwa projektu:** mGłosObywatela
@@ -256,7 +256,7 @@ Vote[] public votes;
 ---
 
 ### 5.3. Definicja i zakres wersji MVP (Minimum Viable Product)
-Zgodnie z wytycznymi `zad3.md`, aby przetestować hipotezę i poprawność kryptograficzną systemu przy minimalnych kosztach, definiujemy wersję MVP.
+Aby przetestować hipotezę i poprawność kryptograficzną systemu przy minimalnych kosztach, definiujemy wersję MVP.
 
 **Zakres MVP (Co zostaje):**
 * **Platforma:** Aplikacja mobilna wyłącznie na system **Android** (jako najpopularniejszy w Polsce, brak kosztów licencji deweloperskiej Apple w fazie testowej).
@@ -295,7 +295,7 @@ Największą barierą dla blockchaina w administracji publicznej jest niemożno�
 
 ---
 
-## 7. Podział pracy i backlog projektowy (Zgodnie z zad4.md)
+## 7. Podział pracy i backlog projektowy
 
 Poniżej przedstawiono kompletny backlog zadań wdrożeniowych dla zespołu projektowego (zasymulowany w stylu Jira/Trello), ustrukturyzowany według epików.
 
