@@ -5,7 +5,58 @@
   <img src="assets/mGłos-logo-trans.png" alt="mGłosObywatela Logo" width="250"/>
 </p>
 
-## 1. Opis pomysłu i cel aplikacji
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-MVP%20Design-orange?style=flat-square" alt="Status"/>
+  <img src="https://img.shields.io/badge/Platform-React%20Native%20%2F%20Expo-blue?style=flat-square&logo=react" alt="Platform"/>
+  <img src="https://img.shields.io/badge/Blockchain-EVM%20PoA%20%28Besu%29-purple?style=flat-square" alt="Blockchain"/>
+  <img src="https://img.shields.io/badge/Database-PostgreSQL-blue?style=flat-square&logo=postgresql" alt="Database"/>
+  <img src="https://img.shields.io/badge/Przedmiot-Projekt%20zespołowy-green?style=flat-square" alt="Subject"/>
+</p>
+
+* **Przedmiot:** Projekt zespołowy - Aplikacja mobilna
+* **Autor:** Student (Realizacja Solo)
+* **Status projektu:** Analiza i Projekt Architektury (Dokumentacja MVP)
+* **Data:** Maj 2026
+
+---
+
+## 📋 Spis Treści
+1. [Opis pomysłu i cel aplikacji](#-1-opis-pomysłu-i-cel-aplikacji)
+   * 1.1 [Intro](#11-intro)
+   * 1.2 [Problem i cel aplikacji](#12-problem-i-cel-aplikacji)
+   * 1.3 [Odbiorcy i scenariusze użycia (Persony)](#13-odbiorcy-i-scenariusze-użycia-persony)
+   * 1.4 [Analiza porównawcza](#14-analiza-porównawcza)
+2. [Analiza prawna i integracja tożsamości](#-2-analiza-prawna-i-integracja-tożsamości)
+   * 2.1 [Powiązanie z polskim porządkiem prawnym](#21-powiązanie-z-polskim-porządkiem-prawnym)
+   * 2.2 [Mechanizm weryfikacji uprawnień](#22-mechanizm-weryfikacji-uprawnień)
+   * 2.3 [Lokalna weryfikacja na urządzeniu (On-Device Verification)](#23-lokalna-weryfikacja-na-urządzeniu-on-device-verification)
+3. [Architektura kryptograficzna i blockchain](#-3-architektura-kryptograficzna-i-blockchain)
+   * 3.1 [Rozdzielenie tożsamości od głosu (RSA Blind Signatures)](#31-rozdzielenie-tożsamości-od-głosu-rsa-blind-signatures)
+   * 3.2 [Konsorcjalny blockchain (Proof of Authority)](#32-konsorcjalny-blockchain-proof-of-authority)
+4. [Opis funkcjonalny i User Flow](#-4-opis-funkcjonalny-i-user-flow)
+   * 4.1 [Architektura ról w systemie](#41-architektura-ról-w-systemie)
+   * 4.2 [Szczegółowy User Flow Obywatela](#42-szczegółowy-user-flow-obywatela)
+5. [Model danych i struktura MVP](#-5-model-danych-i-struktura-mvp)
+   * 5.1 [Diagram Zależności Encji (ERD) – Baza Relacyjna PostgreSQL](#51-diagram-zależności-encji-erd--baza-relacyjna-postgresql)
+   * 5.2 [Ledger Blockchain (Smart Contract State)](#52-ledger-blockchain-smart-contract-state)
+   * 5.3 [Definicja i zakres wersji MVP](#53-definicja-i-zakres-wersji-mvp-minimum-viable-product)
+6. [Bezpieczeństwo i RODO](#-6-bezpieczeństwo-i-rodo)
+   * 6.1 [RODO (Prawo do bycia zapomnianym - Art. 17)](#61-rodo-prawo-do-bycia-zapomnianym---art-17)
+   * 6.2 [Ochrona przed atakami Sybil i double-voting](#62-ochrona-przed-atakami-sybil-i-double-voting)
+7. [Podział pracy i backlog projektowy](#-7-podział-pracy-i-backlog-projektowy)
+   * 7.1 [Epik 1: Projekt i Analiza (DESIGN)](#71-epik-1-projekt-i-analiza-design)
+   * 7.2 [Epik 2: Backend i Moduł Uwierzytelniania (BACKEND)](#72-epik-2-backend-i-moduł-uwierzytelniania-backend)
+   * 7.3 [Epik 3: Smart Contract i Sieć Blockchain (BLOCKCHAIN)](#73-epik-3-smart-contract-i-sieć-blockchain-blockchain)
+   * 7.4 [Epik 4: Frontend Mobilny (FRONTEND)](#74-epik-4-frontend-mobilny-frontend)
+   * 7.5 [Epik 5: Testy i Stabilizacja (TESTING)](#75-epik-5-testy-i-stabilizacja-testing)
+   * 7.6 [Podzadania dla kluczowych zadań (Sub-tasks)](#76-podzadania-dla-kluczowych-zadań-sub-tasks)
+   * 7.7 [Oś czasu i Sprinty (Kanban / Gantt)](#77-oś-czasu-i-sprinty-kanban--gantt)
+8. [Podsumowanie i rekomendacje](#-8-podsumowanie-i-rekomendacje)
+9. [Źródła](#-9-źródła)
+
+---
+
+## 🚀 1. Opis pomysłu i cel aplikacji
 
 ### 1.1. Intro
 * **Nazwa projektu:** mGłosObywatela
@@ -44,7 +95,7 @@ Współczesne referenda lokalne w Polsce (np. w sprawach odwołania wójta/rady,
 
 ---
 
-## 2. Analiza prawna i integracja tożsamości
+## ⚖️ 2. Analiza prawna i integracja tożsamości
 
 ### 2.1. Powiązanie z polskim porządkiem prawnym
 Projekt mGłosObywatela projektowany jest z myślą o pełnej zgodności z:
@@ -109,7 +160,7 @@ flowchart TD
 
 ---
 
-## 3. Architektura kryptograficzna i blockchain
+## 🔐 3. Architektura kryptograficzna i blockchain
 
 ### 3.1. Rozdzielenie tożsamości od głosu (RSA Blind Signatures)
 Największym wyzwaniem systemów e-voting jest sprzeczność: **musimy wiedzieć, kto głosował** (aby zapobiec podwójnemu głosowaniu), ale **nie możemy wiedzieć, jak głosował**.
@@ -159,7 +210,7 @@ Zamiast publicznego blockchaina (np. Ethereum, gdzie opłaty za transakcje gas-f
 
 ---
 
-## 4. Opis funkcjonalny i User Flow
+## ⚙️ 4. Opis funkcjonalny i User Flow
 
 ### 4.1. Architektura ról w systemie
 1. **Obywatel (Aplikacja mobilna):**
@@ -187,7 +238,7 @@ Zamiast publicznego blockchaina (np. Ethereum, gdzie opłaty za transakcje gas-f
 
 ---
 
-## 5. Model danych i struktura MVP
+## 📊 5. Model danych i struktura MVP
 
 ### 5.1. Diagram Zależności Encji (ERD) – Baza Relacyjna PostgreSQL
 Baza relacyjna przechowuje dane konfiguracyjne referendów oraz dane audytowe weryfikacji tożsamości. Nie zawiera ona informacji o oddanych głosach ani o kluczach seryjnych $S$.
@@ -281,7 +332,7 @@ Aby przetestować hipotezę i poprawność kryptograficzną systemu przy minimal
 
 ---
 
-## 6. Bezpieczeństwo i RODO
+## 🛡️ 6. Bezpieczeństwo i RODO
 
 ### 6.1. RODO (Prawo do bycia zapomnianym - Art. 17)
 Największą barierą dla blockchaina w administracji publicznej jest niemożność usunięcia danych ze struktury bloków, co stoi w sprzeczności z RODO.
@@ -299,76 +350,96 @@ Największą barierą dla blockchaina w administracji publicznej jest niemożno�
 
 ---
 
-## 7. Podział pracy i backlog projektowy
+## 📅 7. Podział pracy i backlog projektowy
 
 Poniżej przedstawiono kompletny backlog zadań wdrożeniowych dla zespołu projektowego (zasymulowany w stylu Jira/Trello), ustrukturyzowany według epików.
 
 ### 7.1. Epik 1: Projekt i Analiza (DESIGN)
-* **ID:** `TSK-01` | **Priority:** `HIGH` | **Zależność:** `Brak`
-  * **Nazwa:** Opracowanie makiety UI/UX aplikacji mobilnej w Figma
-  * **Opis:** Przygotowanie makiety low-fidelity i high-fidelity ekranu głównego, logowania mObywatel, ekranu wyboru referendów oraz ekranu podsumowania (kwitu).
-  * **DoD:** Makieta w Figma zawiera wszystkie stany ekranów, w tym obsługę błędów (brak sieci, odrzucenie weryfikacji).
-* **ID:** `TSK-02` | **Priority:** `HIGH` | **Zależność:** `TSK-01`
-  * **Nazwa:** Specyfikacja techniczna API i formatów kryptograficznych
-  * **Opis:** Zdefiniowanie kontraktów API REST (JSON) pomiędzy aplikacją mobilną a serwerem IdP oraz struktury parametrów algorytmu ślepego podpisu RSA.
-  * **DoD:** Dokument Swagger/OpenAPI zdefiniowany i zaakceptowany przez backend i frontend.
+
+> ### `TSK-01` 🎨 Opracowanie makiety UI/UX aplikacji mobilnej w Figma
+> * **Priorytet:** 🟥 `HIGH` | **Zależność:** 🟢 `Brak`
+> * **Opis:** Przygotowanie makiety low-fidelity i high-fidelity ekranu głównego, logowania mObywatel, ekranu wyboru referendów oraz ekranu podsumowania (kwitu).
+> * **Kryteria Akceptacji (DoD):** Makieta w Figma zawiera wszystkie stany ekranów, w tym obsługę błędów (brak sieci, odrzucenie weryfikacji).
+
+> ### `TSK-02` ⚙️ Specyfikacja techniczna API i formatów kryptograficznych
+> * **Priorytet:** 🟥 `HIGH` | **Zależność:** 🛠️ `TSK-01`
+> * **Opis:** Zdefiniowanie kontraktów API REST (JSON) pomiędzy aplikacją mobilną a serwerem IdP oraz struktury parametrów algorytmu ślepego podpisu RSA.
+> * **Kryteria Akceptacji (DoD):** Dokument Swagger/OpenAPI zdefiniowany i zaakceptowany przez backend i frontend.
+
+---
 
 ### 7.2. Epik 2: Backend i Moduł Uwierzytelniania (BACKEND)
-* **ID:** `TSK-03` | **Priority:** `HIGH` | **Zależność:** `TSK-02`
-  * **Nazwa:** Konfiguracja bazy danych PostgreSQL i modeli encji
-  * **Opis:** Utworzenie bazy danych oraz tabel zgodnie z diagramem ERD w rozdziale 5.1 (Referendum, Institution, VoterParticipation).
-  * **DoD:** Migracje bazy danych pomyślnie uruchomione na środowisku deweloperskim.
-* **ID:** `TSK-04` | **Priority:** `HIGH` | **Zależność:** `TSK-03`
-  * **Nazwa:** Serwis uwierzytelniania i autoryzacji (Mock mObywatel)
-  * **Opis:** Implementacja endpointu logowania, weryfikacji wieku z numeru PESEL oraz kodu TERYT (na podstawie mockowanego API).
-  * **DoD:** Endpoint zwraca token sesyjny dla poprawnego PESEL i błąd 403 dla osoby niepełnoletniej.
-* **ID:** `TSK-05` | **Priority:** `CRITICAL` | **Zależność:** `TSK-04`
-  * **Nazwa:** Implementacja ślepego podpisu RSA na backendzie
-  * **Opis:** Utworzenie endpointu `/referenda/{id}/blind-sign`. Serwer generuje klucze RSA dla każdego nowego referendum i podpisuje otrzymany ślepy hash (`blinded_H`).
-  * **DoD:** Test jednostkowy potwierdza, że podpisany ślepy hash po odślepieniu lokalnym jest weryfikowalny kluczem publicznym referendum.
+
+> ### `TSK-03` 🗄️ Konfiguracja bazy danych PostgreSQL i modeli encji
+> * **Priorytet:** 🟥 `HIGH` | **Zależność:** ⚙️ `TSK-02`
+> * **Opis:** Utworzenie bazy danych oraz tabel zgodnie z diagramem ERD w rozdziale 5.1 (Referendum, Institution, VoterParticipation).
+> * **Kryteria Akceptacji (DoD):** Migracje bazy danych pomyślnie uruchomione na środowisku deweloperskim.
+
+> ### `TSK-04` 🔑 Serwis uwierzytelniania i autoryzacji (Mock mObywatel)
+> * **Priorytet:** 🟥 `HIGH` | **Zależność:** 🗄️ `TSK-03`
+> * **Opis:** Implementacja endpointu logowania, weryfikacji wieku z numeru PESEL oraz kodu TERYT (na podstawie mockowanego API).
+> * **Kryteria Akceptacji (DoD):** Endpoint zwraca token sesyjny dla poprawnego PESEL i błąd 403 dla osoby niepełnoletniej.
+
+> ### `TSK-05` 🔏 Implementacja ślepego podpisu RSA na backendzie
+> * **Priorytet:** 🔥 `CRITICAL` | **Zależność:** 🔑 `TSK-04`
+> * **Opis:** Utworzenie endpointu `/referenda/{id}/blind-sign`. Serwer generuje klucze RSA dla każdego nowego referendum i podpisuje otrzymany ślepy hash (`blinded_H`).
+> * **Kryteria Akceptacji (DoD):** Test jednostkowy potwierdza, że podpisany ślepy hash po odślepieniu lokalnym jest weryfikowalny kluczem publicznym referendum.
+
+---
 
 ### 7.3. Epik 3: Smart Contract i Sieć Blockchain (BLOCKCHAIN)
-* **ID:** `TSK-06` | **Priority:** `HIGH` | **Zależność:** `TSK-02`
-  * **Nazwa:** Uruchomienie lokalnego węzła Proof of Authority (Hyperledger Besu)
-  * **Opis:** Konfiguracja pliku genesis sieci Besu z konsensusem QBFT i jednym węzłem walidującym.
-  * **DoD:** Węzeł Besu działa lokalnie i udostępnia port JSON-RPC (HTTP:8545).
-* **ID:** `TSK-07` | **Priority:** `CRITICAL` | **Zależność:** `TSK-06`
-  * **Nazwa:** Implementacja Smart Contractu referendalnego w Solidity
-  * **Opis:** Napisanie kontraktu `ReferendumBallot.sol` weryfikującego podpis urzędu (RSA e, N) pod hashem głosu, sprawdzającego unikalność numeru seryjnego $S$ oraz zapisującego głos do tablicy.
-  * **DoD:** Kontrakt pomyślnie skompilowany i wdrożony na sieć testową przy użyciu Hardhat/Truffle. Testy jednostkowe weryfikują poprawność zapisu głosu i odrzucenie prób double-voting.
+
+> ### `TSK-06` 🌐 Uruchomienie lokalnego węzła Proof of Authority (Hyperledger Besu)
+> * **Priorytet:** 🟥 `HIGH` | **Zależność:** ⚙️ `TSK-02`
+> * **Opis:** Konfiguracja pliku genesis sieci Besu z konsensusem QBFT i jednym węzłem walidującym.
+> * **Kryteria Akceptacji (DoD):** Węzeł Besu działa lokalnie i udostępnia port JSON-RPC (HTTP:8545).
+
+> ### `TSK-07` 📜 Implementacja Smart Contractu referendalnego w Solidity
+> * **Priorytet:** 🔥 `CRITICAL` | **Zależność:** 🌐 `TSK-06`
+> * **Opis:** Napisanie kontraktu `ReferendumBallot.sol` weryfikującego podpis urzędu (RSA e, N) pod hashem głosu, sprawdzającego unikalność numeru seryjnego $S$ oraz zapisującego głos do tablicy.
+> * **Kryteria Akceptacji (DoD):** Kontrakt pomyślnie skompilowany i wdrożony na sieć testową przy użyciu Hardhat/Truffle. Testy jednostkowe weryfikują poprawność zapisu głosu i odrzucenie prób double-voting.
+
+---
 
 ### 7.4. Epik 4: Frontend Mobilny (FRONTEND)
-* **ID:** `TSK-08` | **Priority:** `HIGH` | **Zależność:** `TSK-01`
-  * **Nazwa:** Setup projektu React Native / Expo
-  * **Opis:** Inicjalizacja projektu Expo dla platformy Android, konfiguracja nawigacji (React Navigation) oraz struktury folderów.
-  * **DoD:** Aplikacja uruchamia się na emulatorze Androida z widocznym ekranem startowym.
-* **ID:** `TSK-09` | **Priority:** `HIGH` | **Zależność:** `TSK-08, TSK-04`
-  * **Nazwa:** Integracja logowania (mObywatel Mock) w aplikacji
-  * **Opis:** Implementacja formularza logowania przesyłającego PESEL/dane do mock-IdP i zapisującego token uwierzytelniający w bezpiecznej pamięci (`SecureStore`).
-  * **DoD:** Po poprawnym zalogowaniu użytkownik widzi listę referendów przefiltrowaną dla jego kodu TERYT.
-* **ID:** `TSK-10` | **Priority:** `CRITICAL` | **Zależność:** `TSK-09, TSK-05`
-  * **Nazwa:** Silnik kryptograficzny w React Native (Oślepianie i Odślepianie)
-  * **Opis:** Implementacja logiki generowania losowego numeru seryjnego $S$, hashowania głosu, oślepiania hashu za pomocą losowego `r`, wysyłania do IdP, a po otrzymaniu podpisu – jego odślepiania.
-  * **DoD:** Funkcja kliencka generuje poprawny podpis `Sig` pod jawnym hashem `H` na podstawie odpowiedzi serwera.
-* **ID:** `TSK-11` | **Priority:** `HIGH` | **Zależność:** `TSK-10, TSK-07`
-  * **Nazwa:** Wysyłanie transakcji bezpośrednio na blockchain z telefonu
-  * **Opis:** Integracja biblioteki `ethers.js` w React Native. Konfiguracja przesyłania parametrów głosu ([ID, S, Choice, Sig]) za pomocą transakcji do wdrożonego smart contractu.
-  * **DoD:** Głos zostaje trwale zapisany na blockchainie, a transakcja kończy się statusem sukcesu widocznym w UI aplikacji.
+
+> ### `TSK-08` 📱 Setup projektu React Native / Expo
+> * **Priorytet:** 🟥 `HIGH` | **Zależność:** 🎨 `TSK-01`
+> * **Opis:** Inicjalizacja projektu Expo dla platformy Android, konfiguracja nawigacji (React Navigation) oraz struktury folderów.
+> * **Kryteria Akceptacji (DoD):** Aplikacja uruchamia się na emulatorze Androida z widocznym ekranem startowym.
+
+> ### `TSK-09` 🔐 Integracja logowania (mObywatel Mock) w aplikacji
+> * **Priorytet:** 🟥 `HIGH` | **Zależność:** 📱 `TSK-08`, 🔑 `TSK-04`
+> * **Opis:** Implementacja formularza logowania przesyłającego PESEL/dane do mock-IdP i zapisującego token uwierzytelniający w bezpiecznej pamięci (`SecureStore`).
+> * **Kryteria Akceptacji (DoD):** Po poprawnym zalogowaniu użytkownik widzi listę referendów przefiltrowaną dla jego kodu TERYT.
+
+> ### `TSK-10` 🧠 Silnik kryptograficzny w React Native (Oślepianie i Odślepianie)
+> * **Priorytet:** 🔥 `CRITICAL` | **Zależność:** 🔐 `TSK-09`, 🔏 `TSK-05`
+> * **Opis:** Implementacja logiki generowania losowego numeru seryjnego $S$, hashowania głosu, oślepiania hashu za pomocą losowego `r`, wysyłania do IdP, a po otrzymaniu podpisu – jego odślepiania.
+> * **Kryteria Akceptacji (DoD):** Funkcja kliencka generuje poprawny podpis `Sig` pod jawnym hashem `H` na podstawie odpowiedzi serwera.
+
+> ### `TSK-11` 🔗 Wysyłanie transakcji bezpośrednio na blockchain z telefonu
+> * **Priorytet:** 🟥 `HIGH` | **Zależność:** 🧠 `TSK-10`, 📜 `TSK-07`
+> * **Opis:** Integracja biblioteki `ethers.js` w React Native. Konfiguracja przesyłania parametrów głosu ([ID, S, Choice, Sig]) za pomocą transakcji do wdrożonego smart contractu.
+> * **Kryteria Akceptacji (DoD):** Głos zostaje trwale zapisany na blockchainie, a transakcja kończy się statusem sukcesu widocznym w UI aplikacji.
+
+---
 
 ### 7.5. Epik 5: Testy i Stabilizacja (TESTING)
-* **ID:** `TSK-12` | **Priority:** `MEDIUM` | **Zależność:** `TSK-11`
-  * **Nazwa:** Moduł weryfikacji i audytu głosu (Kwit)
-  * **Opis:** Implementacja ekranu umożliwiającego użytkownikowi wyszukanie na blockchainie swojego głosu po jawnym numerze seryjnym $S$ zapisanym lokalnie w bazie aplikacji.
-  * **DoD:** Użytkownik widzi potwierdzenie "Twój głos został prawidłowo policzony na blockchainie: Choice = TAK".
-* **ID:** `TSK-13` | **Priority:** `HIGH` | **Zależność:** `TSK-11, TSK-07`
-  * **Nazwa:** Testy bezpieczeństwa i symulacja ataków
-  * **Opis:** Przeprowadzenie prób ponownego przesłania transakcji o tym samym numerze seryjnym, przesłania fałszywie podpisanego głosu oraz bezpośredniej modyfikacji bazy danych IdP w celu zmiany wyników.
-  * **DoD:** Smart contract odrzuca wszystkie próby podwójnego głosowania i fałszywych podpisów. Wyniki na blockchainie pozostają zgodne z intencją wyborców pomimo manipulacji w bazie IdP.
+
+> ### `TSK-12` 🔎 Moduł weryfikacji i audytu głosu (Kwit)
+> * **Priorytet:** 🟨 `MEDIUM` | **Zależność:** 🔗 `TSK-11`
+> * **Opis:** Implementacja ekranu umożliwiającego użytkownikowi wyszukanie na blockchainie swojego głosu po jawnym numerze seryjnym $S$ zapisanym lokalnie w bazie aplikacji.
+> * **Kryteria Akceptacji (DoD):** Użytkownik widzi potwierdzenie "Twój głos został prawidłowo policzony na blockchainie: Choice = TAK".
+
+> ### `TSK-13` 🚨 Testy bezpieczeństwa i symulacja ataków
+> * **Priorytet:** 🟥 `HIGH` | **Zależność:** 🔗 `TSK-11`, 📜 `TSK-07`
+> * **Opis:** Przeprowadzenie prób ponownego przesłania transakcji o tym samym numerze seryjnym, przesłania fałszywie podpisanego głosu oraz bezpośredniej modyfikacji bazy danych IdP w celu zmiany wyników.
+> * **Kryteria Akceptacji (DoD):** Smart contract odrzuca wszystkie próby podwójnego głosowania i fałszywych podpisów. Wyniki na blockchainie pozostają zgodne z intencją wyborców pomimo manipulacji w bazie IdP.
 
 ---
 
 ### 7.6. Podzadania dla kluczowych zadań (Sub-tasks)
-
 W celu szczegółowej estymacji, 3 kluczowe zadania o statusie `CRITICAL` zostały rozbite na mniejsze podzadania:
 
 1. **Zadanie `TSK-05` (Podpis RSA backend):**
@@ -394,7 +465,7 @@ Prace nad MVP zostały podzielone na 3 dwutygodniowe sprinty:
 
 ---
 
-## 8. Podsumowanie i rekomendacje
+## 💡 8. Podsumowanie i rekomendacje
 
 Aplikacja **mGłosObywatela** stanowi unikalne połączenie polskiego porządku administracyjnego ze współczesnymi technologiami kryptograficznymi. Dzięki wykorzystaniu ślepych podpisów RSA, system gwarantuje konstytucyjną zasadę tajności głosowania, a sieć blockchain PoA eliminuje ryzyko fałszerstw na poziomie baz danych.
 
@@ -405,7 +476,7 @@ Aplikacja **mGłosObywatela** stanowi unikalne połączenie polskiego porządku 
 
 ---
 
-## 9. Źródła
+## 📚 9. Źródła
 1. **Chaum, D. (1983).** *Blind signatures for untraceable payments.* Advances in Cryptology.
 2. **Semaphore Protocol Documentation.** *Zero-Knowledge group membership and signaling.* [https://semaphore.pse.dev/](https://semaphore.pse.dev/) (Dokumentacja: [https://docs.semaphore.pse.dev/](https://docs.semaphore.pse.dev/))
 3. **Hyperledger Besu Enterprise Ethereum client.** [https://besu.hyperledger.org/](https://besu.hyperledger.org/)
